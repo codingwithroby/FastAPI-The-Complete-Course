@@ -3,9 +3,9 @@ uvicorn==0.13.4
 SQLAlchemy==1.4.25
 python-multipart==0.0.5
 python-jose==3.3.0
-Jinja2==2.11.3
-aiofiles==0.5.0
 bcrypt==3.2.0
 cryptography==35.0.0
 passlib==1.7.4
 PyMySQL==1.0.2
+aiofiles==0.5.0
+jinja2==3.0.3
