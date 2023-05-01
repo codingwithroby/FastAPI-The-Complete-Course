@@ -25,6 +25,5 @@ SQLAlchemy==2.0.7
 starlette==0.26.1
 typing_extensions==4.5.0
 uvicorn==0.20.0
-uvloop==0.17.0
 watchfiles==0.18.1
 websockets==10.4
