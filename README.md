@@ -1,3 +1,3 @@
 "# Fastapi-The-Complete-Course"
 
-Course code created by: Eric Roby
+Course code and created by: Eric Roby

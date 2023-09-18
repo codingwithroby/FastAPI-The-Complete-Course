@@ -1,6 +1,6 @@
 from typing import Optional
 
-from fastapi import FastAPI, Path, Query, HTTPException
+from fastapi import FastAPI, Path, Query, HTTPException, Body
 from pydantic import BaseModel, Field
 from starlette import status
 
@@ -25,7 +25,7 @@ class Book:
 
 
 class BookRequest(BaseModel):
-    id: Optional[int] = Field(title='id is not needed')
+    id: Optional[int] = None
     title: str = Field(min_length=3)
     author: str = Field(min_length=1)
     description: str = Field(min_length=1, max_length=100)
@@ -33,7 +33,7 @@ class BookRequest(BaseModel):
     published_date: int = Field(gt=1999, lt=2031)
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             'example': {
                 'title': 'A new book',
                 'author': 'codingwithroby',
@@ -76,6 +76,7 @@ async def read_book_by_rating(book_rating: int = Query(gt=0, lt=6)):
     return books_to_return
 
 
+
 @app.get("/books/publish/", status_code=status.HTTP_200_OK)
 async def read_books_by_publish_date(published_date: int = Query(gt=1999, lt=2031)):
     books_to_return = []
@@ -87,7 +88,7 @@ async def read_books_by_publish_date(published_date: int = Query(gt=1999, lt=203
 
 @app.post("/create-book", status_code=status.HTTP_201_CREATED)
 async def create_book(book_request: BookRequest):
-    new_book = Book(**book_request.dict())
+    new_book = Book(**book_request.model_dump())
     BOOKS.append(find_book_id(new_book))
 
 
