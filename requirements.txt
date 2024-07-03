@@ -1,4 +1,4 @@
-bcrypt
+bcrypt==4.0.1
 cryptography
 fastapi
 psycopg2-binary
