@@ -1,0 +1,63 @@
+{% include 'layout.html' %}
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Register
+    </div>
+    <div class="card-body">
+      <form id="registerForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="firstname" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Role</label>
+            <input type="text" class="form-control" name="role" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Phone Number</label>
+            <input type="text" class="form-control" name="phone_number" autocomplete="phone_number" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password" autocomplete="new-password" required>
+        </div>
+        <div class="form-group">
+          <label>Verify Password</label>
+          <input type="password" class="form-control" name="password2" autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+    </div>
+    <div class="card-footer text-muted">
+      <a href="/auth/login-page">Already have an account?</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
