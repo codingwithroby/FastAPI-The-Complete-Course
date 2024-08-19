@@ -34,3 +34,15 @@ fastapi run main.py
     - 3xx - Redirection: Further action must be complete.
     - 4xx - Client Errors: An error was caused by client.
     - 5xx - Server Errors: An error occurred on the server.
+
+## 5. Sqlite
+```sql
+-- to enter into sqlite
+sqlite3 
+
+-- to view the schema of the database
+.schema 
+
+-- to change the table view mode
+.mode [column, table, markdown, etc.]
+```
