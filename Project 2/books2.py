@@ -106,6 +106,7 @@ async def update_book(book: BookRequest):
         if BOOKS[i].id == book.id:
             BOOKS[i] = book
             book_changed = True
+            break
     if not book_changed:
         raise HTTPException(status_code=404, detail='Item not found')
 
